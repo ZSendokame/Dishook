@@ -1,7 +1,7 @@
 # Dishook
-**Dishook** it's a library who lets you controll Discord Webhooks via HTTP.<br>
-Supports plain text and embeds, Parameters and JSON gives you more controll than other libraries.<br>
-Dishook it's one of the lasts Discord webhook controll library that is mantained today.
+**Dishook** it's a library who lets you control Discord Webhooks via HTTP.<br>
+Supports plain text and embeds, Parameters and JSON gives you more control than other libraries.<br>
+Dishook it's one of the lasts Discord webhook control library that is mantained today.
 
 # How to install
 ``` Bash
