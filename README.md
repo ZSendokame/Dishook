@@ -4,8 +4,12 @@ Supports plain text and embeds, Parameters and JSON gives you more controll than
 Dishook it's one of the lasts Discord webhook controll library that is mantained today.
 
 # How to install
-```
+``` Bash
+# PIP + GIT:
 pip install git+https://github.com/ZSendokame/Dishook
+
+# PIP:
+pip install dishook
 ```
 
 # How to use
