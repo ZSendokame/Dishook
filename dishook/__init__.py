@@ -1,1 +1,1 @@
-from dishook import *
+from .dishook import(Webhook)
