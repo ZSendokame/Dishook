@@ -7,6 +7,23 @@ class Webhook():
         self.webhook = webhook
         self.json = {}
 
+    def get_information(self):
+        response = requests.get(self.webhook)
+        data = {}
+
+        if response.status_code >= 400:
+            raise Exception(
+                f'{self.webhook} returned ' \
+                f'{response.status_code}, {response.reason}.'
+            )
+
+        data['id'] = response.json()['id']
+        data['channel_id'] = response.json()['channel_id']
+        data['name'] = response.json()['name']
+        data['token'] = response.json()['token']
+
+        return data
+
     def embed(self, **kwargs):
         self.json['embeds'] = [
             {
