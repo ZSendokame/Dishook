@@ -1,11 +1,13 @@
 import requests
 
+
 def check(request_object):
     if request_object.status_code >= 400:
         raise Exception(
-            f'{request_object.url} returned ' \
+            f'{request_object.url} returned '
             f'{request_object.status_code}, {request_object.reason}.'
         )
+
 
 class Webhook():
     def __init__(self, webhook):

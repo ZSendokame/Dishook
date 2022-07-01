@@ -1,1 +1,1 @@
-from .dishook import(Webhook)
+from .dishook import Webhook
