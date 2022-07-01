@@ -1,5 +1,12 @@
 import requests
 
+def check(request_object):
+    if request_object.status_code >= 400:
+        raise Exception(
+            f'{request_object.url} returned ' \
+            f'{request_object.status_code}, {request_object.reason}.'
+        )
+
 class Webhook():
     def __init__(self, webhook):
         self.status = 204
@@ -10,12 +17,13 @@ class Webhook():
     def get_information(self):
         response = requests.get(self.webhook)
 
-        if response.status_code >= 400:
-            raise Exception(
-                f'{self.webhook} returned ' \
-                f'{response.status_code}, {response.reason}.'
-            )
+        check(response)
+        return response.json()
 
+    def modify_configuration(self, **kwargs):
+        response = requests.patch(self.webhook, json=kwargs)
+
+        check(response)
         return response.json()
 
     def embed(self, **kwargs):
@@ -36,13 +44,5 @@ class Webhook():
         self.status = response.status_code
         self.response = response.content
 
-        if self.status == 401:
-            raise Exception(f'{self.webhook} Is not valid webhook URL.')
-
-        elif self.status == 400:
-            raise Exception(
-                f'Discord couldn\'t understand the JSON ' \
-                f'that you sent, you can check it using the "json" variable.'
-            )
-
+        check(response)
         return True
