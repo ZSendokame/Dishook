@@ -35,6 +35,14 @@ class Webhook():
             }
         ]
 
+    def add_field(self, **kwargs):
+        if 'embeds' not in self.json:
+            self.embed(
+                fields=[]
+            )
+
+        self.json['embeds'][0]['fields'].append(kwargs)
+
     def send(self, **kwargs):
         self.json.update(kwargs)
 
