@@ -27,6 +27,11 @@ webhook.embed(
     }
 )
 
+webhook.add_field(
+    name='Webhook field',
+    value='Webhook field description'
+)
+
 webhook.send() # Here, you can add the parameters you wan't!. First check that they are valid.
 
 # You also have some values!
