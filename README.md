@@ -36,6 +36,6 @@ webhook.send() # Here, you can add the parameters you wan't!. First check that t
 
 # You also have some values!
 webhook.json     # In case you have any error, you can check the generated JSON that the library sent.
-webhook.response # More descriptive, if there's any error. Do a try-except and check discord's response (Here is the error.).
+webhook.response # More descriptive, if there's any error. Do a try-except and check discord's response.
 webhook.status   # Here is status code, if you search for it. Probably you will get information
 ```
