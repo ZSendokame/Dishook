@@ -4,7 +4,7 @@ readme = open('README.md')
 
 setup(
     name='dishook',
-    version='1.0.3',
+    version='1.0.4',
     author='Sendokame',
     url='https://github.com/ZSendokame/Dishook',
     description='Control your discord webhooks on a nice way.',
