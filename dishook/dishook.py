@@ -29,11 +29,14 @@ class Webhook():
         return response.json()
 
     def embed(self, **kwargs):
-        self.json['embeds'] = [
+        if 'embeds' not in self.json.keys():
+            self.json['embeds'] = []
+
+        self.json['embeds'].append(
             {
                 **kwargs
             }
-        ]
+        )
 
     def add_field(self, **kwargs):
         if 'embeds' not in self.json:
